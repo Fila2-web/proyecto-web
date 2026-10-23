@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjetura de Collatz | Proyectofila2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Conjetura de Collatz</h1>
+        <p>Explora una secuencia con números pares e impares</p>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="ecuaciones2x2.html">Ecuaciones 2x2</a>
+        <a href="ecuaciones3x3.html">Ecuaciones 3x3</a>
+        <a href="fibonacci.html">Fibonacci</a>
+        <a href="collatz.html" class="activo">Conjetura de Collatz</a>
+    </nav>
+
+    <main class="contenedor">
+        <section class="contenido">
+            <h2>¿Qué es la conjetura de Collatz?</h2>
+            <p>
+                Es un problema matemático que comienza con cualquier entero
+                positivo y aplica una regla según sea par o impar.
+                La conjetura propone que, al repetir el procedimiento,
+                siempre se llega al número 1.
+            </p>
+
+            <h2>Reglas</h2>
+            <ul class="lista">
+                <li>Si el número es par, se divide entre 2.</li>
+                <li>Si el número es impar, se multiplica por 3 y se suma 1.</li>
+                <li>Se repiten las reglas hasta llegar a 1.</li>
+            </ul>
+
+            <h2>Ejemplo con el número 6</h2>
+            <div class="ejemplo">
+                <p>6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1</p>
+                <p>6 es par: 6 ÷ 2 = 3.</p>
+                <p>3 es impar: (3 × 3) + 1 = 10.</p>
+                <p>El procedimiento continúa hasta llegar a 1.</p>
+            </div>
+
+            <p>
+                Aunque se ha comprobado para muchos números, la afirmación
+                general todavía es un problema matemático abierto.
+            </p>
+
+            <a class="boton" href="calcular-collatz.html">Probar un número</a>
+        </section>
+    </main>
+
+    <footer class="pie"><p>Proyectofila2 | Conjetura de Collatz</p></footer>
+</body>
+</html>
