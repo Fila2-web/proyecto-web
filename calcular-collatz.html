@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Collatz | Proyectofila2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Calculadora de Collatz</h1>
+        <p>Ingresa un número y observa su secuencia</p>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="ecuaciones2x2.html">Ecuaciones 2x2</a>
+        <a href="ecuaciones3x3.html">Ecuaciones 3x3</a>
+        <a href="fibonacci.html">Fibonacci</a>
+        <a href="collatz.html">Explicación Collatz</a>
+    </nav>
+
+    <main class="contenedor">
+        <section class="calculadora">
+            <h2>Generar secuencia</h2>
+
+            <form id="formulario">
+                <div class="campo">
+                    <label for="numero">Número entero positivo</label>
+                    <input type="number" id="numero" min="1" max="1000000000"
+                           step="1" value="6" required>
+                </div>
+
+                <button class="boton" type="submit">Calcular secuencia</button>
+            </form>
+
+            <div id="resultado" class="resultado" aria-live="polite"></div>
+            <a class="boton" href="collatz.html">Volver a la explicación</a>
+        </section>
+    </main>
+
+    <footer class="pie"><p>Proyectofila2</p></footer>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const resultado = document.getElementById("resultado");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            let numero = Number(document.getElementById("numero").value);
+
+            if (!Number.isSafeInteger(numero) ||
+                numero < 1 || numero > 1000000000) {
+                resultado.style.display = "block";
+                resultado.textContent =
+                    "Ingresa un número entero entre 1 y 1,000,000,000.";
+                return;
+            }
+
+            const pasos = [numero];
+            const operaciones = [];
+            const limite = 10000;
+
+            while (numero !== 1 && operaciones.length < limite) {
+                if (numero % 2 === 0) {
+                    const anterior = numero;
+                    numero = numero / 2;
+                    operaciones.push(
+                        `${anterior} es par: ${anterior} ÷ 2 = ${numero}`
+                    );
+                } else {
+                    const anterior = numero;
+                    numero = 3 * numero + 1;
+                    operaciones.push(
+                        `${anterior} es impar: (3 × ${anterior}) + 1 = ${numero}`
+                    );
+                }
+
+                pasos.push(numero);
+            }
+
+            resultado.style.display = "block";
+
+            if (numero !== 1) {
+                resultado.innerHTML = `
+                    <h3>Límite alcanzado</h3>
+                    <p>Se alcanzó el máximo de ${limite} operaciones.</p>
+                    <p>La secuencia no llegó a 1 dentro del límite establecido.</p>
+                `;
+                return;
+            }
+
+            resultado.innerHTML = `
+                <h3>Secuencia obtenida</h3>
+                <p>${pasos.join(" → ")}</p>
+                <p><strong>Cantidad de operaciones:</strong> ${operaciones.length}</p>
+                <h3>Procedimiento paso a paso</h3>
+                <ol class="lista">
+                    ${operaciones.map(op => `<li>${op}</li>`).join("")}
+                </ol>
+            `;
+        });
+    </script>
+</body>
+</html>
