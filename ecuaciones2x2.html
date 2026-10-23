@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones 2x2 | Proyectofila2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Ecuaciones 2x2</h1>
+        <p>Sistemas de dos ecuaciones con dos incógnitas</p>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="ecuaciones2x2.html" class="activo">Ecuaciones 2x2</a>
+        <a href="ecuaciones3x3.html">Ecuaciones 3x3</a>
+        <a href="fibonacci.html">Fibonacci</a>
+        <a href="collatz.html">Conjetura de Collatz</a>
+    </nav>
+
+    <main class="contenedor">
+        <section class="contenido">
+            <h2>¿Qué son las ecuaciones 2x2?</h2>
+            <p>
+                Son sistemas formados por dos ecuaciones lineales que contienen
+                dos incógnitas, normalmente representadas por x e y.
+                Resolverlas consiste en encontrar los valores que satisfacen
+                ambas ecuaciones al mismo tiempo.
+            </p>
+
+            <h2>Método de determinantes</h2>
+            <p>Un sistema general puede escribirse de la siguiente manera:</p>
+
+            <div class="ejemplo">
+                <p>a₁x + b₁y = c₁</p>
+                <p>a₂x + b₂y = c₂</p>
+                <p>D = a₁b₂ − a₂b₁</p>
+                <p>Dx = c₁b₂ − c₂b₁</p>
+                <p>Dy = a₁c₂ − a₂c₁</p>
+                <p>Si D es diferente de cero: x = Dx/D, y = Dy/D.</p>
+            </div>
+
+            <h2>Ejemplo</h2>
+            <div class="ejemplo">
+                <p>x + y = 5</p>
+                <p>x − y = 1</p>
+                <p>Sumamos las ecuaciones: 2x = 6, por lo tanto x = 3.</p>
+                <p>Sustituimos: 3 + y = 5, por lo tanto y = 2.</p>
+                <p>Solución: x = 3, y = 2.</p>
+            </div>
+
+            <a class="boton" href="calcular2x2.html">Abrir calculadora 2x2</a>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Proyectofila2 | Ecuaciones 2x2</p>
+    </footer>
+</body>
+</html>
