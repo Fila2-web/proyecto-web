@@ -1,122 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Proyectofila2: aprende matemáticas mediante ejemplos y calculadoras interactivas.">
-
     <title>Proyectofila2 | Inicio</title>
-
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-
-    <header id="inicio">
-        <h1>Bienvenidos a Proyectofila2</h1>
-        <p>Un sitio web para aprender y conocer procedimientos matemáticos</p>
+    <header class="encabezado">
+        <h1>Proyectofila2</h1>
+        <p>Aprende matemáticas de manera sencilla e interactiva</p>
     </header>
 
-    <nav aria-label="Menú principal">
-        <a href="index.html" class="activo" aria-current="page">Inicio</a>
+    <nav class="navegacion">
+        <a href="index.html" class="activo">Inicio</a>
         <a href="ecuaciones2x2.html">Ecuaciones 2x2</a>
-        <a href="cuadratica.html">Ecuación cuadrática</a>
+        <a href="ecuaciones3x3.html">Ecuaciones 3x3</a>
         <a href="fibonacci.html">Fibonacci</a>
-        <a href="collatz.html">Collatz</a>
-        <a href="#contacto">Contacto</a>
+        <a href="collatz.html">Conjetura de Collatz</a>
     </nav>
 
-    <main>
-
-        <section>
-            <h2>¿Qué es Proyectofila2?</h2>
-
+    <main class="contenedor">
+        <section class="presentacion">
+            <h2>Bienvenido a Proyectofila2</h2>
             <p>
-                Proyectofila2 es un sitio web educativo creado para
-                presentar información sobre procedimientos matemáticos
-                mediante ejemplos, fórmulas y algoritmos.
-            </p>
-
-            <p>
-                Su objetivo es ayudar a los estudiantes a comprender
-                cómo resolver diferentes problemas matemáticos,
-                mostrando los pasos necesarios para obtener los resultados.
-            </p>
-
-            <p>
-                En esta página encontrarás información sobre sistemas
-                de ecuaciones lineales 2x2, ecuaciones cuadráticas,
-                la serie de Fibonacci y la conjetura de Collatz.
-            </p>
-
-            <p>
-                Cada tema cuenta con su propio apartado, donde podrás
-                consultar ejemplos explicados paso a paso e introducir
-                tus propios valores para resolver ejercicios.
+                En este sitio encontrarás explicaciones y ejemplos de diferentes
+                temas matemáticos. Puedes consultar la teoría de cada tema y
+                utilizar las calculadoras para comprobar tus resultados.
             </p>
         </section>
 
         <section>
-            <h2>Temas matemáticos</h2>
+            <h2 class="titulo-seccion">Temas disponibles</h2>
 
-            <div class="menu-tarjetas">
-
+            <div class="rejilla">
                 <article class="tarjeta">
-                    <h3>Sistemas de ecuaciones 2x2</h3>
+                    <h3>Ecuaciones 2x2</h3>
                     <p>
-                        Aprende cómo resolver dos ecuaciones con dos
-                        incógnitas y descubre si tienen una, ninguna
-                        o infinitas soluciones.
+                        Aprende a resolver sistemas de dos ecuaciones con dos
+                        incógnitas utilizando el método de determinantes.
                     </p>
                 </article>
 
                 <article class="tarjeta">
-                    <h3>Ecuación cuadrática</h3>
+                    <h3>Ecuaciones 3x3</h3>
                     <p>
-                        Conoce la fórmula general y aprende a calcular
-                        las raíces de una ecuación de segundo grado.
+                        Conoce cómo resolver sistemas de tres ecuaciones con
+                        tres incógnitas.
                     </p>
                 </article>
 
                 <article class="tarjeta">
-                    <h3>Serie de Fibonacci</h3>
+                    <h3>Sucesión de Fibonacci</h3>
                     <p>
-                        Descubre cómo cada término se obtiene sumando
-                        los dos anteriores y genera tu propia sucesión.
+                        Descubre cómo se forma esta sucesión sumando los dos
+                        términos anteriores.
                     </p>
                 </article>
 
                 <article class="tarjeta">
                     <h3>Conjetura de Collatz</h3>
                     <p>
-                        Conoce las reglas para números pares e impares
-                        y observa cómo se genera una secuencia hasta
-                        llegar a 1.
+                        Explora una secuencia numérica que utiliza reglas
+                        diferentes para números pares e impares.
                     </p>
                 </article>
-
             </div>
         </section>
 
-        <section id="contacto">
+        <section class="nota">
             <h2>Contacto</h2>
-
-            <p>Gracias por visitar nuestro sitio web.</p>
-
             <p>
-                Este proyecto fue realizado con fines educativos
-                para aprender sobre matemáticas y desarrollo web.
+                Gracias por visitar nuestro sitio web.<br>
+				Este proyecto fue realizado con fines educativos
+				para aprender sobre matemáticas y desarrollo web.
             </p>
         </section>
-
     </main>
 
-    <footer>
-        <p>Proyectofila2 - Proyecto escolar 2026</p>
+    <footer class="pie">
+        <p>Proyectofila2 | Proyecto educativo de matemáticas</p>
     </footer>
-
 </body>
 </html>
