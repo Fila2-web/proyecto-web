@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci | Proyectofila2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Serie de Fibonacci</h1>
+    <p>Genera sucesiones y descubre cómo se calculan sus términos</p>
+</header>
+
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="ecuaciones2x2.html">Ecuaciones 2x2</a>
+    <a href="cuadratica.html">Ecuación cuadrática</a>
+    <a href="fibonacci.html" class="activo">Fibonacci</a>
+    <a href="collatz.html">Collatz</a>
+</nav>
+
+<main>
+    <a class="boton volver" href="index.html">← Volver al inicio</a>
+
+    <section>
+        <h2>¿Qué es la serie de Fibonacci?</h2>
+        <p>
+            Es una sucesión numérica en la que cada término, a partir
+            del tercero, se obtiene sumando los dos términos anteriores.
+        </p>
+
+        <div class="ejemplo">
+            <p><strong>Ejemplo:</strong></p>
+            <p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34...</p>
+            <p>El tercer término es 0 + 1 = 1.</p>
+            <p>El cuarto término es 1 + 1 = 2.</p>
+            <p>El quinto término es 1 + 2 = 3.</p>
+            <p>El sexto término es 2 + 3 = 5.</p>
+        </div>
+
+        <p>
+            Esta sucesión aparece en distintos contextos matemáticos
+            y se utiliza para estudiar patrones numéricos.
+        </p>
+    </section>
+
+    <section>
+        <h2>Genera tu propia sucesión</h2>
+        <p>
+            Indica cuántos términos quieres obtener. Puedes generar
+            desde 1 hasta 100 términos.
+        </p>
+
+        <form id="formulario" class="formulario">
+            <div class="campo completo">
+                <label for="cantidad">Cantidad de términos</label>
+                <input type="number" id="cantidad" min="1" max="100"
+                       value="10" step="1" required>
+            </div>
+            <div class="campo completo">
+                <button type="submit">Generar Fibonacci</button>
+            </div>
+        </form>
+
+        <div id="resultado" class="resultado" aria-live="polite"></div>
+    </section>
+</main>
+
+<footer>
+    <p>Proyectofila2 - Proyecto escolar 2026</p>
+</footer>
+
+<script>
+const form = document.getElementById("formulario");
+const resultado = document.getElementById("resultado");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const cantidad = Number(document.getElementById("cantidad").value);
+
+    resultado.style.display = "block";
+    resultado.classList.remove("error");
+
+    if (!Number.isInteger(cantidad) || cantidad < 1 || cantidad > 100) {
+        resultado.classList.add("error");
+        resultado.innerHTML =
+            "<h3>Dato no válido</h3><p>Ingresa un número entero del 1 al 100.</p>";
+        return;
+    }
+
+    const serie = [];
+    let html = "<h3>Procedimiento paso a paso</h3><ol>";
+
+    for (let i = 0; i < cantidad; i++) {
+        if (i === 0) {
+            serie.push(0);
+            html += "<li>Término 1: comenzamos con 0.</li>";
+        } else if (i === 1) {
+            serie.push(1);
+            html += "<li>Término 2: continuamos con 1.</li>";
+        } else {
+            const anterior = serie[i-1];
+            const anteanterior = serie[i-2];
+            const nuevo = anterior + anteanterior;
+
+            serie.push(nuevo);
+
+            html += `<li>Término ${i+1}: ${anteanterior} + ${anterior} = ${nuevo}.</li>`;
+        }
+    }
+
+    html += "</ol><h3>Sucesión generada</h3>";
+    html += `<p>${serie.join(", ")}</p>`;
+    html += `<p><strong>Total de términos:</strong> ${cantidad}</p>`;
+
+    resultado.innerHTML = html;
+});
+</script>
+
+</body>
+</html>
