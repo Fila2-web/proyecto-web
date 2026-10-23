@@ -3,173 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectofila2 | Inicio</title>
+
+    <!-- Archivo externo de estilos -->
     <link rel="stylesheet" href="estilos.css">
-    <title>Proyectofila2</title>
 </head>
 
 <body>
 
-    <header>
+    <!-- Encabezado -->
+    <header id="inicio">
         <h1>Bienvenidos a Proyectofila2</h1>
         <p>Un sitio web para aprender y conocer procedimientos matemáticos</p>
     </header>
 
+    <!-- Menú de navegación -->
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#ecuaciones">Ecuaciones lineales</a>
-        <a href="#cuadratica">Ecuación cuadrática</a>
-        <a href="#fibonacci">Fibonacci</a>
-        <a href="#collatz">Collatz</a>
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="ecuaciones2x2.html">Ecuaciones 2x2</a>
+        <a href="cuadratica.html">Ecuación cuadrática</a>
+        <a href="fibonacci.html">Fibonacci</a>
+        <a href="collatz.html">Collatz</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <section id="inicio">
-        <h2>¿Qué es Proyectofila2?</h2>
+    <main>
 
-        <p>
-            Proyectofila2 es un sitio web creado para presentar información
-            sobre algunos procedimientos matemáticos. Su objetivo es ayudar
-            a los estudiantes a conocer cómo se resuelven diferentes problemas
-            mediante fórmulas y algoritmos.
-        </p>
+        <!-- Información principal -->
+        <section>
+            <h2>¿Qué es Proyectofila2?</h2>
 
-        <p>
-            En esta página encontrarás información sobre sistemas de
-            ecuaciones lineales, ecuaciones cuadráticas, la serie de
-            Fibonacci y la conjetura de Collatz.
-        </p>
-    </section>
+            <p>
+                Proyectofila2 es un sitio web educativo creado para
+                presentar información sobre algunos procedimientos
+                matemáticos mediante ejemplos, fórmulas y algoritmos.
+            </p>
 
-    <section id="ecuaciones">
-        <h2>Sistemas de ecuaciones lineales</h2>
+            <p>
+                Su objetivo es ayudar a los estudiantes a comprender
+                cómo se resuelven diferentes problemas matemáticos,
+                mostrando los procedimientos necesarios para obtener
+                los resultados.
+            </p>
 
-        <p>
-            Un sistema de ecuaciones lineales está formado por dos o más
-            ecuaciones que tienen varias incógnitas. El objetivo es encontrar
-            los valores que cumplen todas las ecuaciones al mismo tiempo.
-        </p>
+            <p>
+                En esta página encontrarás información sobre sistemas
+                de ecuaciones lineales 2x2, ecuaciones cuadráticas,
+                la serie de Fibonacci y la conjetura de Collatz.
+            </p>
 
-        <p>
-            Los sistemas 2x2 tienen dos ecuaciones y dos incógnitas,
-            mientras que los sistemas 3x3 tienen tres ecuaciones y
-            tres incógnitas.
-        </p>
+            <p>
+                Cada tema cuenta con su propio apartado, donde podrás
+                consultar ejemplos explicados paso a paso e introducir
+                tus propios valores para resolver ejercicios.
+            </p>
+        </section>
 
-        <p> NÚMERO DE SOLUCIONES DE UN SISTEMA LINEAL CON DOS INCÓGNITAS <br>
-            Para un sistema de ecuaciones lineales con dos incógnitas, exactamente una de las
-            siguientes afirmaciones es verdadera. <br>
-            1. El sistema tiene exactamente una solución. <br>
-            2. El sistema no tiene solución.<br>
-            3. El sistema tiene un número infinito de soluciones. <br>
-      <div class="ejemplo">
-            <strong>Ejemplo:</strong> <br><br>
-            Un sistema lineal sin solución<br><br>
-            Resuelva el sistema.<br><br>
-            Ecuación 1    8x-2y=5 <br><br>
-            Ecuación 2    -12x+3y=7 <br><br>
-            SOLUCIÓN: Esta vez tratamos de hallar una combinación apropiada de las dos ecuaciones para eliminar la variable y. La multiplicación
-            de la primera ecuación por 3 y la segunda ecuación por 2 da <br>
-            <br>
-            24x - 6y = 15 <br><br>
-            -24x + 6y = 14 <br><br>
-            --------------- <br>
-                    0 = 29 <br>
-            <br>
-      </div>
-            La suma de las dos ecuaciones elimina tanto x como y en este caso, y terminamos con
-            0  29, que es obviamente falso. No importa qué valores asignemos a x y a y, no podemos
-            hacer que este enunciado sea verdadero, de manera que el sistema no tiene solución. El sistema es inconsistente.
-        </p>
-    </section>
+        <!-- Tarjetas informativas sin botones -->
+        <section>
+            <h2>Temas matemáticos</h2>
 
-  <section id="cuadratica">
-        <h2>Ecuación cuadrática</h2>
+            <div class="menu-tarjetas">
 
-        <p>
-            Una ecuación cuadrática es una expresión matemática de segundo
-            grado. Su forma general es ax² + bx + c = 0, donde a, b y c
-            son números y a debe ser diferente de cero.
-        </p>
+                <article class="tarjeta">
+                    <h3>Sistemas de ecuaciones 2x2</h3>
 
-        <p>
-            Para encontrar sus soluciones se utiliza la fórmula general:
-            x = (-b ± √(b² - 4ac)) / 2a.
-        </p>
+                    <p>
+                        Un sistema de ecuaciones 2x2 está formado por
+                        dos ecuaciones con dos incógnitas. Su objetivo
+                        es encontrar los valores de x e y que satisfacen
+                        ambas ecuaciones al mismo tiempo.
+                    </p>
+                </article>
 
-        <div class="ejemplo">
-            <p><strong>Ejemplo:</strong> resolver x² - 4x + 3 = 0</p>
-            <p>1. Identificamos los valores: a = 1, b = -4 y c = 3.</p>
-            <p>2. Sustituimos en la fórmula: x = (-(-4) ± √((-4)² - 4(1)(3))) / (2(1))</p>
-            <p>3. Calculamos cada parte: -(-4) = 4, (-4)² = 16, 4(1)(3) = 12 y 2(1) = 2. Queda: x = (4 ± √(16 - 12)) / 2</p>
-            <p>4. Restamos dentro de la raíz: 16 - 12 = 4, y √4 = 2. Queda: x = (4 ± 2) / 2</p>
-            <p>5. Separamos el ± en dos soluciones:</p>
-            <p>x₁ = (4 + 2) / 2 = 6 / 2 = 3</p>
-            <p>x₂ = (4 - 2) / 2 = 2 / 2 = 1</p>
-            <p>Las soluciones son x = 3 y x = 1.</p>
-        </div>
-    </section>
+                <article class="tarjeta">
+                    <h3>Ecuación cuadrática</h3>
 
-    <section id="fibonacci">
-        <h2>Serie de Fibonacci</h2>
+                    <p>
+                        Una ecuación cuadrática es una expresión
+                        matemática de segundo grado. Para resolverla
+                        podemos utilizar la fórmula general y calcular
+                        sus raíces.
+                    </p>
+                </article>
 
-        <p>
-            La serie de Fibonacci es una sucesión de números en la que
-            cada número se obtiene sumando los dos anteriores.
-        </p>
-         <div class="ejemplo">
-        <p>
-            <strong>Ejemplo:</strong> 0, 1, 1, 2, 3, 5, 8, 13, 21...
-        </p>
-         </div>
-        <p>
-            Esta sucesión se utiliza en matemáticas y aparece en algunos
-            patrones que se observan en la naturaleza.
-        </p>
-    </section>
+                <article class="tarjeta">
+                    <h3>Serie de Fibonacci</h3>
 
-        <section id="collatz">
-        <h2>Conjetura de Collatz</h2>
+                    <p>
+                        Es una sucesión numérica en la que cada término,
+                        a partir del tercero, se obtiene sumando
+                        los dos términos anteriores.
+                    </p>
+                </article>
 
-        <p>
-            La conjetura de Collatz es un problema matemático que comienza
-            con un número entero positivo.
-        </p>
+                <article class="tarjeta">
+                    <h3>Conjetura de Collatz</h3>
 
-        <p>
-            Si el número es par, se divide entre dos. Si es impar,
-            se multiplica por tres y se suma uno. Después se repite
-            el proceso con el resultado.
-        </p>
+                    <p>
+                        Es un problema matemático que utiliza reglas
+                        para números pares e impares. El procedimiento
+                        se repite hasta llegar a 1, aunque todavía
+                        no existe una demostración general de la conjetura.
+                    </p>
+                </article>
 
-        <p>
-            La conjetura propone que, al repetir estas operaciones,
-            siempre se termina llegando al número 1.
-        </p>
+            </div>
+        </section>
 
-        <div class="ejemplo">
-            <p><strong>Ejemplo:</strong> empezando con el número 5</p>
-            <p>5 es impar → 5 × 3 + 1 = 16</p>
-            <p>16 es par → 16 ÷ 2 = 8</p>
-            <p>8 es par → 8 ÷ 2 = 4</p>
-            <p>4 es par → 4 ÷ 2 = 2</p>
-            <p>2 es par → 2 ÷ 2 = 1</p>
-            <p>¡Llegamos a 1!</p>
-        </div>
-    </section>
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
+            <p>
+                Gracias por visitar nuestro sitio web.
+            </p>
 
-        <p>
-            Gracias por visitar nuestro sitio web.
-        </p>
+            <p>
+                Este proyecto fue realizado con fines educativos
+                para aprender sobre matemáticas y desarrollo web.
+            </p>
+        </section>
 
-        <p>
-            Este proyecto fue realizado con fines educativos para
-            aprender sobre matemáticas y desarrollo web
-        </p>
-    </section>
+    </main>
 
+    <!-- Pie de página -->
     <footer>
         <p>Proyectofila2 - Proyecto escolar 2026</p>
     </footer>
