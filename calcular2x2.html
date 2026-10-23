@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 2x2 | Proyectofila2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Calculadora de ecuaciones 2x2</h1>
+        <p>Ingresa los coeficientes del sistema</p>
+    </header>
+
+    <nav class="navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="ecuaciones2x2.html">Explicación 2x2</a>
+        <a href="ecuaciones3x3.html">Ecuaciones 3x3</a>
+        <a href="fibonacci.html">Fibonacci</a>
+        <a href="collatz.html">Collatz</a>
+    </nav>
+
+    <main class="contenedor">
+        <section class="calculadora">
+            <h2>Ingresa las ecuaciones</h2>
+            <p>El sistema tiene la forma ax + by = c.</p>
+
+            <form id="formulario">
+                <h3>Primera ecuación: ax + by = c</h3>
+                <div class="grupo-campos">
+                    <div class="campo">
+                        <label for="a1">Coeficiente a</label>
+                        <input type="number" id="a1" step="any" value="1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="b1">Coeficiente b</label>
+                        <input type="number" id="b1" step="any" value="1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="c1">Resultado c</label>
+                        <input type="number" id="c1" step="any" value="5" required>
+                    </div>
+                </div>
+
+                <h3>Segunda ecuación: dx + ey = f</h3>
+                <div class="grupo-campos">
+                    <div class="campo">
+                        <label for="a2">Coeficiente d</label>
+                        <input type="number" id="a2" step="any" value="1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="b2">Coeficiente e</label>
+                        <input type="number" id="b2" step="any" value="-1" required>
+                    </div>
+                    <div class="campo">
+                        <label for="c2">Resultado f</label>
+                        <input type="number" id="c2" step="any" value="1" required>
+                    </div>
+                </div>
+
+                <button class="boton" type="submit">Resolver sistema</button>
+            </form>
+
+            <div id="resultado" class="resultado" aria-live="polite"></div>
+            <a class="boton" href="ecuaciones2x2.html">Volver a la explicación</a>
+        </section>
+    </main>
+
+    <footer class="pie"><p>Proyectofila2</p></footer>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const resultado = document.getElementById("resultado");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const a = Number(document.getElementById("a1").value);
+            const b = Number(document.getElementById("b1").value);
+            const c = Number(document.getElementById("c1").value);
+            const d = Number(document.getElementById("a2").value);
+            const e = Number(document.getElementById("b2").value);
+            const f = Number(document.getElementById("c2").value);
+
+            const D = a * e - d * b;
+            const Dx = c * e - f * b;
+            const Dy = a * f - d * c;
+
+            resultado.style.display = "block";
+
+            if (Math.abs(D) < 1e-10) {
+                if (Math.abs(Dx) < 1e-10 && Math.abs(Dy) < 1e-10) {
+                    resultado.innerHTML =
+                        "<h3>Resultado</h3><p>El sistema puede tener infinitas soluciones.</p>";
+                } else {
+                    resultado.innerHTML =
+                        "<h3>Resultado</h3><p>El sistema no tiene solución.</p>";
+                }
+                return;
+            }
+
+            const x = Dx / D;
+            const y = Dy / D;
+
+            resultado.innerHTML = `
+                <h3>Solución</h3>
+                <p>Determinante D = ${D}</p>
+                <p>Determinante Dx = ${Dx}</p>
+                <p>Determinante Dy = ${Dy}</p>
+                <p>x = Dx / D = ${Dx} / ${D} = ${x.toFixed(4)}</p>
+                <p>y = Dy / D = ${Dy} / ${D} = ${y.toFixed(4)}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
