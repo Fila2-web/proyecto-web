@@ -20,5 +20,40 @@
         <a href="collatz.html">Conjetura de Collatz</a>
         <a href="formulario.html" class="activo">Administrador</a>
     </nav>
+
+    <div class="contenedor-admin">
+    <div class="formulario-admin">
+        <h2>Acceso de administrador</h2>
+        <p>Ingresa tus credenciales para continuar</p>
+
+        <form action="#" method="POST">
+            <div class="campo-admin">
+                <label for="usuario">Usuario</label>
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    placeholder="Ingresa tu usuario"
+                    required
+                >
+            </div>
+
+            <div class="campo-admin">
+                <label for="contrasena">Contraseña</label>
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    placeholder="Ingresa tu contraseña"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-ingresar">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
